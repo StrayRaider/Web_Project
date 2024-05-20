@@ -1,0 +1,41 @@
+.fullPage {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(186, 205, 146);
+}
+
+.container {
+  color: bisque;
+  background-color: rgb(117, 164, 127);
+  width: 50%;
+  max-width: 500px;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.inputs {
+  display: flex;
+  flex-direction: column;
+  width: 20%;
+  margin-top: 20px;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: row;
+  margin-top: 10px;
+}
+
+.buttons button {
+  margin: 2px;
+}
+
+#signBtn {
+  margin-top: 5px;
+}

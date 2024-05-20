@@ -1,6 +1,8 @@
-import "./listGroup.css";
+import "./marketing.css";
+import { Link } from "react-router-dom";
+import React from "react";
 
-function ListGroup() {
+function Marketing() {
   return (
     <>
       <nav class="navbar navbar-expand-lg " id="navbar">
@@ -279,6 +281,11 @@ function ListGroup() {
         </button>
       </div>
 
+      <ul>
+        <li>
+          <Link to="/">Home</Link>
+        </li>
+      </ul>
       {/* FOOTER */}
       <div class="text-light text-center" id="footer">
         <p class="align-middle p-5 mb-0">
@@ -290,4 +297,4 @@ function ListGroup() {
   );
 }
 
-export default ListGroup;
+export default Marketing;
