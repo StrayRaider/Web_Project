@@ -280,12 +280,6 @@ function Marketing() {
           <span className="visually-hidden">Next</span>
         </button>
       </div>
-
-      <ul>
-        <li>
-          <Link to="/">Home</Link>
-        </li>
-      </ul>
       {/* FOOTER */}
       <div class="text-light text-center" id="footer">
         <p class="align-middle p-5 mb-0">

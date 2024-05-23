@@ -31,13 +31,6 @@ function signUp() {
             Surname
             <input class="form-control" type="text" id="surname" required />
           </label>
-          <label>
-            Choose a Role:
-            <select class="form-select" name="roles" id="roles">
-              <option value="client">Client</option>
-              <option value="trainer">Trainer</option>
-            </select>
-          </label>
           <label for="start">
             Birth date:
             <input
