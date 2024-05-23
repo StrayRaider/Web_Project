@@ -60,6 +60,21 @@ app.post("/api/login", async (req, res) => {
   }
 });
 
+// Routes
+app.post("/api/signup", async (req, res) => {
+    console.log("Received signup request");
+  
+    try {
+      // Check user credentials (e.g., validate username and password)
+      const { email, password, name, surname, birthdate, gender, phoneNumber } = req.body;
+      console.log("user data:", email, password, name, surname, birthdate, gender, phoneNumber);
+
+    } catch (error) {
+      console.error("Error logging in user", error);
+      res.status(500).send("An error occurred while logging in user");
+    }
+  });
+
 // Route to check if user is authenticated
 app.get("/api/user", (req, res) => {
   if (req.session.loggedIn || req.cookies.rememberMe) {
