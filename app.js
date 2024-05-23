@@ -1,12 +1,16 @@
 import express from "express";
 import session from "express-session";
 import crypto from "crypto";
-import cors from "cors"; // cors modülünü import edin
+import cors from "cors"; // CORS modülünü import edin
 
 const app = express();
 
-// CORS middleware'i uygulayın
+// CORS middleware'ini uygulayın
 app.use(cors());
+
+// Body parsing middleware'leri
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 
 // Function to generate a random secret key for session
 const generateSecretKey = () => {
@@ -23,15 +27,33 @@ app.use(
   })
 );
 
+// Temporary user credentials
+const validUsername = "admin";
+const validPassword = "password";
+
 // Routes
 app.post("/api/login", async (req, res) => {
-  console.log("merhaba");
+  console.log("Received login request");
 
   try {
     // Check user credentials (e.g., validate username and password)
-    //const { email, password } = req.body;
-    console.log(req);
-    //console.log(email);
+    const { email, password, rememberMe } = req.body;
+    console.log("username:", email);
+
+    // If authentication is successful
+    if (email === validUsername && password === validPassword) {
+      // Set session data
+      req.session.loggedIn = true;
+
+      // If rememberMe is checked, set a persistent cookie without expiration time
+      if (rememberMe) {
+        res.cookie("rememberMe", "true", { httpOnly: true });
+      }
+
+      res.status(200).send("Login successful");
+    } else {
+      res.status(401).send("Invalid username or password");
+    }
   } catch (error) {
     console.error("Error logging in user", error);
     res.status(500).send("An error occurred while logging in user");
