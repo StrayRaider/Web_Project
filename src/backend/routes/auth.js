@@ -8,7 +8,7 @@ router.post("/register", async (req, res) => {
       const hashedPassword = await bcrypt.hash(req.body.password, 8);
       const newUser = await User.create({ name: req.body.name, surname:req.body.surname,gender:req.body.gender,phonenumber:req.body.phonenumber, email: req.body.email, password: hashedPassword, dob: req.body.dob });
       req.session.user = newUser.toJSON(); // Store the user object in the session
-      res.status(201).json({ user: newUser });
+      res.status(200).json({ user: newUser });
     } catch (error) {
       console.error("Error registering a new user", error);
       res.status(500).send("An error occurred while registering a new user");
