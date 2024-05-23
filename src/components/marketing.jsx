@@ -288,7 +288,7 @@ function Marketing() {
         </p>
       </div>
       <button class="form-control" type="submit" id="signUpBtn">
-        <Link to="/buy">Kayıt</Link>
+        <Link to="/product">Kayıt</Link>
       </button>
     </>
   );
