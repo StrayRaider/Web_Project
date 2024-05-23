@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
-const User = require('../models/user');
+const User = require('../../models/user');
 
 async function authTokenUser(req, res, next) {
     // Extract the JWT token from the Authorization header
@@ -42,7 +42,7 @@ async function authTokenUser(req, res, next) {
   // app.use('/api', authTokenUser);
   
   
-app.get("/user",async (req, res) => {
+router.get("/",async (req, res) => {
 // Retrieve user information from the request object
 const user = req.user;
 
@@ -50,7 +50,7 @@ const user = req.user;
 res.status(200).json({ user: user });
 });
 
-app.post("/user/update",async (req, res) => {
+router.post("/update",async (req, res) => {
 try {
     // TODO add products and favorites to this
     // Retrieve user ID from the authenticated user object
@@ -81,15 +81,4 @@ try {
     res.status(500).json({ message: "An error occurred while updating user information" });
 }
 });
-
-
-// add.post("/api/product/add", async (req,res) => {
-//   try {
-//     const newProduct = await Product.create({name:req.body.name,description:req.body.description,price:req.body.price,category:req.body.category,stock:req.body.stock,images:req.body.images,brand:req.body.brand})
-//     if(!newProduct){
-//       res.status(201).json({newProduct})
-//     }
-//   } catch (error) {
-//     res.status(500).send("Error!")
-//   }
-// })
+module.exports = router;
