@@ -1,7 +1,7 @@
 import "./marketing.css";
 import { Link } from "react-router-dom";
 import React from "react";
-
+import ChatAssistant from "./ChatAssitant";
 function Marketing() {
   return (
     <>
@@ -113,6 +113,9 @@ function Marketing() {
                 style={{ width: "400px", height: "400px", borderRadius: "50%" }}
               />
             </div>
+          </div>
+          <div>
+            <ChatAssistant />
           </div>
         </div>
       </div>
