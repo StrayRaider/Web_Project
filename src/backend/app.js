@@ -24,10 +24,9 @@ mongoose.connect("mongodb://localhost:27017/webproject", {
   useUnifiedTopology: true,
 });
 app.use("/auth", authRoutes);
-app.use("/api/user", userRoutes);
-app.use("/api/product", productRoutes);
-app.use("/api/ollama", ollamaRoutes);
-
+app.use("/api/user",userRoutes);
+app.use("/api/product",productRoutes);
+// app.use("/api/ollama",ollamaRoutes);
 // Start the server on port 3000
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
