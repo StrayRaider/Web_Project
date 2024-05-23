@@ -13,6 +13,11 @@ gerekliliklerden olan vite indirilmeli
 npm i vite react-router-dom
 ```
 
+### Backend Dependencies
+```
+node i express mongoose
+```
+
 ## Nasıl çalıştırılır :
 
 ```

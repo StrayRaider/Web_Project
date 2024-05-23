@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios"; // Axios'u import edin
 
-const signup_url = "http://localhost:3000/register";
+const signup_url = "http://localhost:3000/auth/register";
 
 function signUp() {
   const [email, setEmail] = useState("");
@@ -11,18 +11,47 @@ function signUp() {
   const [birthdate, setBirthdate] = useState("");
   const [gender, setGender] = useState("");
   const [phoneNumber, setPhoneNumber] = useState("");
+/*
+
+    axios.post('http://localhost:3000/auth/register', {
+      name: 'John',
+      surname: 'Doe',
+      gender: 'Male',
+      phonenumber: '123456789',
+      email: 'john.doe@example.com',
+      password: 'your_password_here',
+      dob: '1990-01-01'
+    }, {
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    })
+    .then(response => {
+      console.log('User registered successfully:', response.data);
+    })
+    .catch(error => {
+      console.error('Error registering user:', error.response.data);
+    });
+  };
+*/
+
 
   const handleSignUp = async () => {
+    console.log(name, surname, gender, phoneNumber, email, password, birthdate);
     try {
       const response = await axios.post(signup_url, {
-        email: email,
-        password: password,
         name: name,
         surname: surname,
-        birthdate: birthdate,
         gender: gender,
-        phoneNumber: phoneNumber,
-      });
+        phonenumber: phoneNumber,
+        email: email,
+        password: password,
+        dob: birthdate,
+      }, {
+        headers: {
+          'Content-Type': 'application/json'
+        }});
+      //Error registering a new user Error: User validation failed: gender: Path `gender` is required., phonenumber: Path `phonenumber` is required., dob: Path `dob` is required. at ValidationError.inspect 
 
       if (response.status === 200) {
         // İstek başarılı olduğunda yönlendirme yapabilirsiniz
@@ -98,14 +127,15 @@ function signUp() {
 
           <label for="gender">Gender:</label>
           <label>
-            <select
-              class="form-select"
-              value={gender}
-              onChange={(e) => setGender(e.target.value)}
-            >
-              <option value="male">Male</option>
-              <option value="female">Female</option>
-            </select>
+          <select
+            className="form-select"
+            value={gender}
+            onChange={(e) => setGender(e.target.value)}
+          >
+            <option value="">Select Gender</option>
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+          </select>
           </label>
 
           <label for="phone">

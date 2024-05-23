@@ -3,7 +3,7 @@ import "./signIn.css";
 import { Link } from "react-router-dom";
 import axios from "axios"; // Axios'u import edin
 
-const login_url = "http://localhost:3000/login";
+const login_url = "http://localhost:3000/auth/login";
 
 function SignIn() {
   const [email, setEmail] = useState("");

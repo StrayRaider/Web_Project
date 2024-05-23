@@ -17,6 +17,7 @@
     "crypto": "^1.0.1",
     "express": "^4.19.2",
     "express-session": "^1.18.0",
+    "mongoose": "^8.4.0",
     "react": "^18.2.0",
     "react-bootstrap": "^2.10.2",
     "react-dom": "^18.2.0",
