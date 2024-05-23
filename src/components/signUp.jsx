@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios"; // Axios'u import edin
 
-const signup_url = "http://localhost:3000/api/signup";
+const signup_url = "http://localhost:3000/register";
 
 function signUp() {
   const [email, setEmail] = useState("");
