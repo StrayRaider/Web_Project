@@ -15,7 +15,7 @@ npm i vite react-router-dom
 
 ### Backend Dependencies
 ```
-node i express mongoose
+node i express mongoose multer sharp tesseract.js
 ```
 
 ## Nasıl çalıştırılır :
