@@ -5,7 +5,7 @@ import SignIn from "./components/signIn";
 import SignUp from "./components/signUp";
 import Product from "./components/product";
 import Buy from "./components/buy";
-
+import Admin from "./components/admin";
 function App() {
   return (
     <Router>
@@ -16,6 +16,7 @@ function App() {
           <Route path="/signUp" element={<SignUp />} />
           <Route path="/product" element={<Product />} />
           <Route path="/buy" element={<Buy />} />
+          <Route path="/admin" element={<Admin />} />
         </Routes>
       </div>
     </Router>

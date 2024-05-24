@@ -67,7 +67,7 @@ function SignIn() {
               Giriş
             </button>
             <button className="form-control" type="submit" id="signUpBtn">
-              <Link to="/signUp">Kayıt</Link>
+              <Link to="/admin">Kayıt</Link>
             </button>
           </div>
         </div>
