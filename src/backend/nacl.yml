@@ -1,0 +1,20 @@
+- group: user
+  permissions:
+    - resource: /api/*
+      methods:
+        - GET
+        - POST
+        - DELETE
+      action: allow
+      subRoutes:
+        - resource: 'admin'
+          methods:
+          - GET
+          - POST
+          - DELETE
+          action: deny
+    - resource: /auth/*
+      methods:
+        - GET
+        - POST
+      action: allow
