@@ -9,6 +9,7 @@ const app = express();
 const authRoutes = require("./routes/auth");
 const userRoutes = require("./routes/api/user");
 // const productRoutes = require("./routes/product");
+const payRoutes = require('./routes/api/pay');
 const ollamaRoutes = require("./routes/api/ollama");
 const adminRoutes = require("./routes/api/admin");
 const acl = require("express-acl");
@@ -62,6 +63,7 @@ mongoose.connect("mongodb://localhost:27017/webproject", {
   useUnifiedTopology: true,
 });
 const acloptions = {
+  yml: true,
   filename: "nacl.yml",
   path: "",
   defaultRole: "guest"
@@ -72,6 +74,7 @@ app.use(acl.authorize);
 app.use("/auth", authRoutes);
 app.use("/api/user", userRoutes);
 // app.use("/api/product", productRoutes);
+app.use("/api/pay",payRoutes);
 app.use("/api/ollama", ollamaRoutes);
 app.use("/api/admin", adminRoutes);
 // Start the server on port 3000
