@@ -66,7 +66,7 @@ const acloptions = {
   yml: true,
   filename: "nacl.yml",
   path: "",
-  defaultRole: "guest"
+  defaultRole: "user"
 }
 acl.config(acloptions);
 app.use(acl.authorize);

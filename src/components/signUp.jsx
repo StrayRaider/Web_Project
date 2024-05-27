@@ -25,6 +25,7 @@ function signUp() {
           email: email,
           password: password,
           dob: birthdate,
+          role:"user"
         },
         {
           headers: {
@@ -34,7 +35,7 @@ function signUp() {
       );
       //Error registering a new user Error: User validation failed: gender: Path `gender` is required., phonenumber: Path `phonenumber` is required., dob: Path `dob` is required. at ValidationError.inspect
 
-      if (response.status === 200) {
+      if (response.status === 201) {
         // İstek başarılı olduğunda yönlendirme yapabilirsiniz
         window.location.href = "/"; // Örnek bir yönlendirme
       } else {

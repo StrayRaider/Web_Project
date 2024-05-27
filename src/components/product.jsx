@@ -29,9 +29,7 @@ function Product() {
                   <li>Stokta</li>
                 </ul>
               </p>
-              <button class="add-to-cart-btn">
-                <Link to="/buy">Sepete Ekle</Link>
-              </button>
+                <Link to="/buy">Satın AL</Link>
             </div>
           </div>
         </div>

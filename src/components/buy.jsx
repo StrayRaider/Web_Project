@@ -33,6 +33,9 @@ function Buy() {
         headers: {
           'Content-Type': 'application/json'
         }});
+        if(response.status === 200){
+          alert("siparişiniz alındı..");
+        }
 
     } catch (error) {
       console.error("An error occurred during buy:", error);
@@ -40,6 +43,7 @@ function Buy() {
   };
 
   const scanCard = async (e) => {
+    alert("bu ekranı kapadıktan sonra veriler yüklenene kadar bekleyiniz !")
     const scan_card_url = "http://localhost:3000/api/pay/scan_card"
     document.getElementById('upload-form').addEventListener('submit', async function(event) {
       event.preventDefault();

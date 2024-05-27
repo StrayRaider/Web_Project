@@ -60,14 +60,8 @@ router.post('/scan_card', upload.single('file'), async (req, res) => {
 router.post('/buy', async (req, res) => {
     try {
         const formData = req.body; // Access the form data sent from the frontend
-        console.log(req.body)
-        console.log(req.name)
-        console.log(req.surname)
-        // Now you can use the formData object to access individual form fields
-        const name = formData.name;
-        const surname = formData.surname;
-        const address = formData.address;
-        console.log(address);
+        console.log("veriler : ", req.body);
+        res.status(200).json({ data: "data" });
         
     } catch (error) {
         console.error('Error processing file:', error); // Log errors
