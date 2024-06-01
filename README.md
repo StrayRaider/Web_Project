@@ -4,24 +4,14 @@
 
 ## Gereklilikler
 
-- nodejs sistemde yüklü olmalı
-- npm sistemde yüklü olmalı
-
-gerekliliklerden olan vite indirilmeli
-
-```
-npm i vite react-router-dom
-```
-
-### Backend Dependencies
-```
-node i express mongoose multer sharp tesseract.js
-```
+- Konteyner için, docker veya podman sistemde kurulu olmalı.
 
 ## Nasıl çalıştırılır :
 
 ```
-npm run dev
+docker compose -f docker-compose.yml config && docker compose up
 ```
-
-komutu ile kod çalıştırılır, npm'in ekrana bastığı porttan siteye erişebilirsiniz.
+## Erişim :
+Localhost 3000 portundan back-end'e, Localhost 5173 portundan ise front-end'e erişim sağlanmaktadır.
+- http://localhost:5173/
+- http://localhost:3000/
